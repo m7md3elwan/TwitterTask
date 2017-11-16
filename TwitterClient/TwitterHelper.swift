@@ -53,11 +53,6 @@ public class TwitterHelper {
         
     }
     
-    static func getQueryStringParameter(url: String, param: String) -> String? {
-        guard let url = URLComponents(string: url) else { return nil }
-        return url.queryItems?.first(where: { $0.name == param })?.value
-    }
-    
     // MARK:- Private methods
     static fileprivate func getAuthorizationStirng(parameters:[String:String]) -> String {
         var authorizationString: String = "OAuth "

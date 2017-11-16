@@ -11,4 +11,5 @@ import Foundation
 struct AuthToken {
     var oauthToken: String
     var oauthTokenSecret: String
+    var oauthVerifier: String? = nil
 }

@@ -24,13 +24,24 @@ class LoginViewController: UIViewController {
     @IBAction func LoginButtonTouchUpInside(_ sender: UIButton) {
         TwitterHelper.getRequestToken { (authToken, error) in
             guard error == nil else {
-                // show error alert
+                let alert = UIAlertController(title: "Error", message: "Failed to get Token", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "oK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
             }
             
-            // continue to login page
+            let twitterLoginWebViewController = TwitterLoginWebViewController.instantiateFromStoryboard()
+            self.present(twitterLoginWebViewController, animated: true, completion: { 
+                twitterLoginWebViewController.startLogin(with: authToken!, onSuccess: {
+                    print("Success")
+                }, onFailure: { 
+                    print("Failure")
+                })
+            })
+            
         }
     }
-
+    
     // MARK: Private methods
     fileprivate func localizeView() {
     }

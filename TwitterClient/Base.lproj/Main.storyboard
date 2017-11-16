@@ -156,5 +156,73 @@
             </objects>
             <point key="canvasLocation" x="-249" y="138"/>
         </scene>
+        <!--Twitter Login Web View Controller-->
+        <scene sceneID="AJV-j6-9M2">
+            <objects>
+                <viewController storyboardIdentifier="TwitterLoginWebViewController" modalPresentationStyle="currentContext" id="fTG-h6-gtW" customClass="TwitterLoginWebViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ObG-c8-TqU"/>
+                        <viewControllerLayoutGuide type="bottom" id="JcV-5n-E7h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3qk-jP-4gS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZC7-1c-bed">
+                                <rect key="frame" x="0.0" y="64" width="320" height="461"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-0G-Ni7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxP-cM-MXA">
+                                        <rect key="frame" x="140" y="32" width="40" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lob-1u-a5F">
+                                        <rect key="frame" x="265" y="17" width="39" height="30"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeButtonClicked:" destination="fTG-h6-gtW" eventType="touchUpInside" id="PnJ-Oh-lea"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.67252129319999998" blue="0.26579540969999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="33e-9u-0db"/>
+                                    <constraint firstItem="Lob-1u-a5F" firstAttribute="centerY" secondItem="zFU-0G-Ni7" secondAttribute="centerY" id="3kv-FP-A6j"/>
+                                    <constraint firstItem="kxP-cM-MXA" firstAttribute="centerY" secondItem="zFU-0G-Ni7" secondAttribute="centerY" constant="10" id="VOh-1Q-AJF"/>
+                                    <constraint firstItem="kxP-cM-MXA" firstAttribute="centerX" secondItem="zFU-0G-Ni7" secondAttribute="centerX" id="Xmx-Il-reY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lob-1u-a5F" secondAttribute="trailing" constant="16" id="aQQ-Zi-Am2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zFU-0G-Ni7" firstAttribute="top" secondItem="3qk-jP-4gS" secondAttribute="top" id="0J3-hr-kFa"/>
+                            <constraint firstAttribute="trailing" secondItem="zFU-0G-Ni7" secondAttribute="trailing" id="1tc-K3-eVQ"/>
+                            <constraint firstItem="JcV-5n-E7h" firstAttribute="top" secondItem="ZC7-1c-bed" secondAttribute="bottom" id="BlS-Ip-MdU"/>
+                            <constraint firstItem="ZC7-1c-bed" firstAttribute="top" secondItem="zFU-0G-Ni7" secondAttribute="bottom" id="VRa-5s-1eY"/>
+                            <constraint firstItem="ZC7-1c-bed" firstAttribute="leading" secondItem="3qk-jP-4gS" secondAttribute="leading" id="Wpx-Tg-x3a"/>
+                            <constraint firstAttribute="trailing" secondItem="ZC7-1c-bed" secondAttribute="trailing" id="ZZ3-Ad-Xyg"/>
+                            <constraint firstItem="zFU-0G-Ni7" firstAttribute="leading" secondItem="3qk-jP-4gS" secondAttribute="leading" id="pil-6l-FeN"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="525"/>
+                    <connections>
+                        <outlet property="webView" destination="ZC7-1c-bed" id="qBY-zk-HqJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ah9-nL-Je5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="118"/>
+        </scene>
     </scenes>
 </document>

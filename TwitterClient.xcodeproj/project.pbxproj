@@ -20,6 +20,8 @@
 		3ECE4F5A1FBD2E5B0031E5E9 /* String+HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F591FBD2E5B0031E5E9 /* String+HMAC.swift */; };
 		3ECE4F5C1FBD2E6F0031E5E9 /* String+TwitterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F5B1FBD2E6F0031E5E9 /* String+TwitterEncoding.swift */; };
 		3ECE4F691FBD5BB60031E5E9 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F681FBD5BB60031E5E9 /* AuthToken.swift */; };
+		3ECE4F6B1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F6A1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift */; };
+		3ECE4F6D1FBD62F50031E5E9 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F6C1FBD62F50031E5E9 /* HelperMethods.swift */; };
 		A33608644ABF3FCCCF1A85DE /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326EEF3E35C949D313F51F07 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		3ECE4F5B1FBD2E6F0031E5E9 /* String+TwitterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+TwitterEncoding.swift"; path = "Extensions/String+TwitterEncoding.swift"; sourceTree = "<group>"; };
 		3ECE4F631FBD30C70031E5E9 /* TwitterClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		3ECE4F681FBD5BB60031E5E9 /* AuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthToken.swift; path = Models/AuthToken.swift; sourceTree = "<group>"; };
+		3ECE4F6A1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterLoginWebViewController.swift; path = Modules/TwitterLoginWebViewController.swift; sourceTree = "<group>"; };
+		3ECE4F6C1FBD62F50031E5E9 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperMethods.swift; path = Extensions/HelperMethods.swift; sourceTree = "<group>"; };
 		5B3EFEA361A50BFDEC149AC9 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,7 @@
 				3E12889E1FBAB280005D4247 /* UIViewController+instantiateFromStoryboard.swift */,
 				3ECE4F591FBD2E5B0031E5E9 /* String+HMAC.swift */,
 				3ECE4F5B1FBD2E6F0031E5E9 /* String+TwitterEncoding.swift */,
+				3ECE4F6C1FBD62F50031E5E9 /* HelperMethods.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				3ECE4F501FBAB3B10031E5E9 /* LoginViewController.swift */,
 				3E12889B1FBAB1F8005D4247 /* AppFlowViewController.swift */,
 				3ECE4F531FBAB5600031E5E9 /* FollowersListViewController.swift */,
+				3ECE4F6A1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -273,9 +279,11 @@
 			files = (
 				3ECE4F5C1FBD2E6F0031E5E9 /* String+TwitterEncoding.swift in Sources */,
 				3ECE4F511FBAB3B10031E5E9 /* LoginViewController.swift in Sources */,
+				3ECE4F6D1FBD62F50031E5E9 /* HelperMethods.swift in Sources */,
 				3E12889C1FBAB1F8005D4247 /* AppFlowViewController.swift in Sources */,
 				3ECE4F691FBD5BB60031E5E9 /* AuthToken.swift in Sources */,
 				3ECE4F561FBAB7B00031E5E9 /* TwitterApiPortal.swift in Sources */,
+				3ECE4F6B1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift in Sources */,
 				3E12889F1FBAB280005D4247 /* UIViewController+instantiateFromStoryboard.swift in Sources */,
 				3E12888A1FBAAE72005D4247 /* AppDelegate.swift in Sources */,
 				3ECE4F581FBAC52E0031E5E9 /* TwitterHelper.swift in Sources */,
