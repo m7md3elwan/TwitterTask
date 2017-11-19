@@ -22,6 +22,14 @@
 		3ECE4F691FBD5BB60031E5E9 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F681FBD5BB60031E5E9 /* AuthToken.swift */; };
 		3ECE4F6B1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F6A1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift */; };
 		3ECE4F6D1FBD62F50031E5E9 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F6C1FBD62F50031E5E9 /* HelperMethods.swift */; };
+		3ECE4F6F1FBF982B0031E5E9 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F6E1FBF982B0031E5E9 /* UserInfo.swift */; };
+		3ECE4F711FC0B9F80031E5E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F701FC0B9F80031E5E9 /* User.swift */; };
+		3ECE4F761FC0E4610031E5E9 /* ICSInfiniteScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F731FC0E4610031E5E9 /* ICSInfiniteScrolling.swift */; };
+		3ECE4F771FC0E4610031E5E9 /* ICSPullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F751FC0E4610031E5E9 /* ICSPullToRefresh.swift */; };
+		3ECE4F791FC0E6110031E5E9 /* Error+Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F781FC0E6110031E5E9 /* Error+Code.swift */; };
+		3ECE4F7B1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F7A1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift */; };
+		3ECE4F7D1FC0FEB60031E5E9 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F7C1FC0FEB60031E5E9 /* Follower.swift */; };
+		3ECE4F7F1FC104D00031E5E9 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F7E1FC104D00031E5E9 /* FollowerTableViewCell.swift */; };
 		A33608644ABF3FCCCF1A85DE /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326EEF3E35C949D313F51F07 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +54,15 @@
 		3ECE4F681FBD5BB60031E5E9 /* AuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthToken.swift; path = Models/AuthToken.swift; sourceTree = "<group>"; };
 		3ECE4F6A1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterLoginWebViewController.swift; path = Modules/TwitterLoginWebViewController.swift; sourceTree = "<group>"; };
 		3ECE4F6C1FBD62F50031E5E9 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperMethods.swift; path = Extensions/HelperMethods.swift; sourceTree = "<group>"; };
+		3ECE4F6E1FBF982B0031E5E9 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3ECE4F701FC0B9F80031E5E9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		3ECE4F731FC0E4610031E5E9 /* ICSInfiniteScrolling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSInfiniteScrolling.swift; sourceTree = "<group>"; };
+		3ECE4F741FC0E4610031E5E9 /* ICSPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSPullToRefresh.h; sourceTree = "<group>"; };
+		3ECE4F751FC0E4610031E5E9 /* ICSPullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSPullToRefresh.swift; sourceTree = "<group>"; };
+		3ECE4F781FC0E6110031E5E9 /* Error+Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Code.swift"; sourceTree = "<group>"; };
+		3ECE4F7A1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientPlaceHolders.swift; sourceTree = "<group>"; };
+		3ECE4F7C1FC0FEB60031E5E9 /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		3ECE4F7E1FC104D00031E5E9 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowerTableViewCell.swift; path = Modules/FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		5B3EFEA361A50BFDEC149AC9 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +124,8 @@
 				3ECE4F591FBD2E5B0031E5E9 /* String+HMAC.swift */,
 				3ECE4F5B1FBD2E6F0031E5E9 /* String+TwitterEncoding.swift */,
 				3ECE4F6C1FBD62F50031E5E9 /* HelperMethods.swift */,
+				3ECE4F781FC0E6110031E5E9 /* Error+Code.swift */,
+				3ECE4F7A1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -132,6 +151,7 @@
 				3E12889B1FBAB1F8005D4247 /* AppFlowViewController.swift */,
 				3ECE4F531FBAB5600031E5E9 /* FollowersListViewController.swift */,
 				3ECE4F6A1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift */,
+				3ECE4F7E1FC104D00031E5E9 /* FollowerTableViewCell.swift */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -139,14 +159,28 @@
 		3ECE4F671FBD5B940031E5E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3ECE4F701FC0B9F80031E5E9 /* User.swift */,
 				3ECE4F681FBD5BB60031E5E9 /* AuthToken.swift */,
+				3ECE4F6E1FBF982B0031E5E9 /* UserInfo.swift */,
+				3ECE4F7C1FC0FEB60031E5E9 /* Follower.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3ECE4F721FC0E4610031E5E9 /* ICSPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				3ECE4F731FC0E4610031E5E9 /* ICSInfiniteScrolling.swift */,
+				3ECE4F741FC0E4610031E5E9 /* ICSPullToRefresh.h */,
+				3ECE4F751FC0E4610031E5E9 /* ICSPullToRefresh.swift */,
+			);
+			path = ICSPullToRefresh;
 			sourceTree = "<group>";
 		};
 		A12E00FBBACE04A5EA970FBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3ECE4F721FC0E4610031E5E9 /* ICSPullToRefresh */,
 				326EEF3E35C949D313F51F07 /* Pods_TwitterClient.framework */,
 			);
 			name = Frameworks;
@@ -277,18 +311,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ECE4F7D1FC0FEB60031E5E9 /* Follower.swift in Sources */,
 				3ECE4F5C1FBD2E6F0031E5E9 /* String+TwitterEncoding.swift in Sources */,
 				3ECE4F511FBAB3B10031E5E9 /* LoginViewController.swift in Sources */,
 				3ECE4F6D1FBD62F50031E5E9 /* HelperMethods.swift in Sources */,
 				3E12889C1FBAB1F8005D4247 /* AppFlowViewController.swift in Sources */,
 				3ECE4F691FBD5BB60031E5E9 /* AuthToken.swift in Sources */,
 				3ECE4F561FBAB7B00031E5E9 /* TwitterApiPortal.swift in Sources */,
+				3ECE4F711FC0B9F80031E5E9 /* User.swift in Sources */,
 				3ECE4F6B1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift in Sources */,
 				3E12889F1FBAB280005D4247 /* UIViewController+instantiateFromStoryboard.swift in Sources */,
+				3ECE4F6F1FBF982B0031E5E9 /* UserInfo.swift in Sources */,
+				3ECE4F7F1FC104D00031E5E9 /* FollowerTableViewCell.swift in Sources */,
 				3E12888A1FBAAE72005D4247 /* AppDelegate.swift in Sources */,
 				3ECE4F581FBAC52E0031E5E9 /* TwitterHelper.swift in Sources */,
+				3ECE4F761FC0E4610031E5E9 /* ICSInfiniteScrolling.swift in Sources */,
 				3ECE4F541FBAB5600031E5E9 /* FollowersListViewController.swift in Sources */,
 				3ECE4F5A1FBD2E5B0031E5E9 /* String+HMAC.swift in Sources */,
+				3ECE4F791FC0E6110031E5E9 /* Error+Code.swift in Sources */,
+				3ECE4F7B1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift in Sources */,
+				3ECE4F771FC0E4610031E5E9 /* ICSPullToRefresh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,27 +22,44 @@ class LoginViewController: UIViewController {
     // MARK:- Methods
     // MARK: Actions
     @IBAction func LoginButtonTouchUpInside(_ sender: UIButton) {
-        TwitterHelper.getRequestToken { (authToken, error) in
+        TwitterHelper.getRequestToken { (requestToken, error) in
             guard error == nil else {
-                let alert = UIAlertController(title: "Error", message: "Failed to get Token", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "oK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                self.showLoginError()
                 return
             }
             
             let twitterLoginWebViewController = TwitterLoginWebViewController.instantiateFromStoryboard()
             self.present(twitterLoginWebViewController, animated: true, completion: { 
-                twitterLoginWebViewController.startLogin(with: authToken!, onSuccess: {
-                    print("Success")
-                }, onFailure: { 
-                    print("Failure")
+
+                twitterLoginWebViewController.startLogin(with: requestToken!, onSuccess: { (authToken) in
+                    
+                    TwitterHelper.getAccessToken(token: authToken, completion: { (userInfo, error) in
+                        guard error == nil else {
+                            self.showLoginError()
+                            return
+                        }
+
+                        User.shared.userInfo = userInfo
+                        NotificationCenter.default.post(name: Notification.Name(KNotificationShowFollowersList), object: nil)
+
+                    })
+                    
+                }, onFailure: {
+                    self.showLoginError()
                 })
+                
             })
             
         }
     }
     
     // MARK: Private methods
+    fileprivate func showLoginError() {
+        let alert = UIAlertController(title: "Error", message: "Failed to login", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "oK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     fileprivate func localizeView() {
     }
 }

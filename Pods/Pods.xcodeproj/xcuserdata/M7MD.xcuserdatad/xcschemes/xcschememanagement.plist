@@ -9,7 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HGPlaceholders.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Localize-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TwitterClient.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5375D4027AEB53873F73B87B18C2C3C9</key>
+		<key>5BC3C8A46B4ADBF111DF0950ADF4FF12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C171772222568F6969152EE8B9DF8700</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB5D5E02525F1B530BE41BF1BD40ED6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC00A2B118650C6C90D34FB24F60280D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

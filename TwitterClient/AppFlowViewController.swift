@@ -8,14 +8,22 @@
 
 import UIKit
 
+let KNotificationShowFollowersList = "KNotificationShowFollowersList"
+
+
 class AppFlowViewController: UINavigationController {
-    // MARK: Properties
     
     // MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        showLogin()
+        NotificationCenter.default.addObserver(self, selector: #selector(AppFlowViewController.showFollowersList), name: NSNotification.Name(KNotificationShowFollowersList), object: nil)
+        
+        if User.shared.userInfo == nil {
+            showLogin()
+        } else {
+            showFollowersList()
+        }
     }
     
     // MARK:- Methods
@@ -25,7 +33,7 @@ class AppFlowViewController: UINavigationController {
         setViewControllers([loginViewController], animated: true)
     }
     
-    fileprivate func showFollowersList() {
+    @objc fileprivate func showFollowersList() {
         let followersListViewController = FollowersListViewController.instantiateFromStoryboard()
         setViewControllers([followersListViewController], animated: true)
     }

@@ -48,7 +48,7 @@
         <!--Followers List View Controller-->
         <scene sceneID="ohd-xu-DbN">
             <objects>
-                <viewController storyboardIdentifier="FollowersListViewController" id="dSQ-xA-6O2" customClass="FollowersListViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FollowersListViewController" automaticallyAdjustsScrollViewInsets="NO" id="dSQ-xA-6O2" customClass="FollowersListViewController" customModule="TwitterClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gs0-Dd-Poi"/>
                         <viewControllerLayoutGuide type="bottom" id="yUt-qm-SRj"/>
@@ -57,12 +57,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vm1-q2-dHL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="107" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vm1-q2-dHL" customClass="TableView" customModule="HGPlaceholders">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="107" id="hjq-a1-q2L">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowerTableViewCell" rowHeight="107" id="hjq-a1-q2L" customClass="FollowerTableViewCell" customModule="TwitterClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjq-a1-q2L" id="bxU-To-Q1J">
@@ -123,6 +123,12 @@
                                                 <constraint firstItem="Khg-f4-BjK" firstAttribute="top" secondItem="bxU-To-Q1J" secondAttribute="top" constant="8" id="stb-lt-4ps"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followerBioLabel" destination="eBm-ba-46G" id="XRP-WC-wll"/>
+                                            <outlet property="followerHandleNameLabel" destination="pef-CX-riR" id="bOr-rX-oc2"/>
+                                            <outlet property="followerImage" destination="eb7-CG-uDv" id="6Je-i5-TEW"/>
+                                            <outlet property="followerNameLabel" destination="guF-cS-StK" id="uVY-PL-E0q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -135,6 +141,9 @@
                             <constraint firstAttribute="trailing" secondItem="vm1-q2-dHL" secondAttribute="trailing" id="wxy-nw-Ovp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="vm1-q2-dHL" id="GEl-uW-Al7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7H-AP-ccR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ah9-nL-Je5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="118"/>
+            <point key="canvasLocation" x="2611" y="141"/>
         </scene>
     </scenes>
 </document>

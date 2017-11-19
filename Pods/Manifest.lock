@@ -1,12 +1,23 @@
 PODS:
   - Alamofire (4.5.0)
+  - HGPlaceholders (0.2.0)
+  - Localize-Swift (1.7.1)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - HGPlaceholders
+  - Localize-Swift (~> 1.7)
+  - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  HGPlaceholders: 275dd3ef0a99ed6236e76c95f6982b6fdf2ef77a
+  Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 35a80de8dcb4384b99adf86d72834ff2227bb384
+PODFILE CHECKSUM: b6fa2d71abe0ca2189ec15727b7a279845937307
 
 COCOAPODS: 1.1.1

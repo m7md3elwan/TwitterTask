@@ -18,7 +18,7 @@ class TwitterLoginWebViewController: UIViewController {
     @IBOutlet var webView: UIWebView!
     
     // MARK: - Variables
-    var onSuccessCompletion:(() -> Void)!
+    var onSuccessCompletion:((_ token:AuthToken) -> Void)!
     var onFailureCompletion:(() -> Void)!
     
     // MARK: - Lifecycle
@@ -27,7 +27,7 @@ class TwitterLoginWebViewController: UIViewController {
         self.webView.delegate = self
     }
     
-    func startLogin(with authToken: AuthToken, onSuccess successCompletion:(() -> Void)?, onFailure failureCompletion:(() -> Void)?){
+    func startLogin(with authToken: AuthToken, onSuccess successCompletion:((_ token:AuthToken) -> Void)?, onFailure failureCompletion:(() -> Void)?){
         
         self.onSuccessCompletion = successCompletion
         self.onFailureCompletion = failureCompletion
@@ -56,7 +56,10 @@ extension TwitterLoginWebViewController: UIWebViewDelegate
                 
                 if let oauth_token = getQueryStringParameter(url: url.absoluteString, param: "oauth_token"), let oauth_verifier = getQueryStringParameter(url: url.absoluteString, param: "oauth_verifier") {
                     
-                    
+                    dismiss(animated: true, completion:
+                        {
+                            self.onSuccessCompletion(AuthToken(oauthToken: oauth_token, oauthTokenSecret: nil, oauthVerifier: oauth_verifier))
+                    })
                     
                 } else {
                     dismiss(animated: true, completion:
