@@ -114,7 +114,7 @@ public class TwitterHelper {
         
 
         
-        TwitterApiPortal.getJson(endPoint: TwitterApiPortal.Endpoints.getFollowers, parameters: parameters, headers: authorizationHeaders) { (dict, error) in
+        TwitterApiPortal.getDictionary(endPoint: TwitterApiPortal.Endpoints.getFollowers, parameters: parameters, headers: authorizationHeaders) { (dict, error) in
             
             guard error == nil else { completion(nil, nil, error); return  }
             guard dict != nil else { completion(nil, nil, NSError(domain: "TwitterClient", code: 1, userInfo: nil)); return  }
@@ -135,6 +135,55 @@ public class TwitterHelper {
         }
     }
     
+    
+    static func getTweets(user: UserInfo, follower: Follower, completion:@escaping(_ tweets: [String]?,_ error: Error?)-> Void) {
+        
+        var headerParmeters = [String:String]()
+        headerParmeters["oauth_consumer_key"] = constants.consumerKey
+        headerParmeters["oauth_nonce"] = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        headerParmeters["oauth_signature_method"] = constants.signatureEncryptionMethod
+        headerParmeters["oauth_timestamp"] = "\(Int(Date().timeIntervalSince1970))"
+        headerParmeters["oauth_version"] = "1.0"
+        headerParmeters["oauth_token"] = user.token.oauthToken
+        
+        let parameters = ["screen_name":"\(follower.screenName)",
+            "user_id":"\(follower.id)",
+            "count":"\(10)"]
+        
+        var signatureParameters = [String:String]()
+        for (key,value) in headerParmeters {
+            signatureParameters[key] = value
+        }
+        for (key,value) in parameters {
+            signatureParameters[key] = value
+        }
+        
+        headerParmeters["oauth_signature"] = getSignatureStirng(method: .get, urlString: "\(TwitterApiPortal.baseURL)\(TwitterApiPortal.Endpoints.getTweets.rawValue)", parameters: signatureParameters, signingKey: "\(constants.consumerSecret.twitterEncoded())&\(user.token.oauthTokenSecret!.twitterEncoded())")
+        
+        
+        let authorizationHeaders = ["Authorization":getAuthorizationStirng(parameters: headerParmeters)]
+        
+        
+        TwitterApiPortal.getArray(endPoint: TwitterApiPortal.Endpoints.getTweets, parameters: parameters, headers: authorizationHeaders) { (array, error) in
+            
+            guard error == nil else { completion(nil, error); return  }
+            guard array != nil else { completion(nil, NSError(domain: "TwitterClient", code: 1, userInfo: nil)); return  }
+            
+            var tweets = [String]()
+            
+            if let tweetsArray = array as? [[String:Any]] {
+                
+                for tweetDict in tweetsArray {
+                    if let tweetText = tweetDict["text"] as? String {
+                        tweets.append(tweetText)
+                    }
+                }
+            }
+            
+            completion(tweets , nil)
+            
+        }
+    }
     
     
     // MARK:- Private methods

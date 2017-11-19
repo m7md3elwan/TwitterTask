@@ -30,6 +30,7 @@
 		3ECE4F7B1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F7A1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift */; };
 		3ECE4F7D1FC0FEB60031E5E9 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F7C1FC0FEB60031E5E9 /* Follower.swift */; };
 		3ECE4F7F1FC104D00031E5E9 /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F7E1FC104D00031E5E9 /* FollowerTableViewCell.swift */; };
+		3ECE4F811FC116D20031E5E9 /* FollowerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECE4F801FC116D20031E5E9 /* FollowerDetailsViewController.swift */; };
 		A33608644ABF3FCCCF1A85DE /* Pods_TwitterClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326EEF3E35C949D313F51F07 /* Pods_TwitterClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		3ECE4F7A1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClientPlaceHolders.swift; sourceTree = "<group>"; };
 		3ECE4F7C1FC0FEB60031E5E9 /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		3ECE4F7E1FC104D00031E5E9 /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowerTableViewCell.swift; path = Modules/FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		3ECE4F801FC116D20031E5E9 /* FollowerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowerDetailsViewController.swift; path = Modules/FollowerDetailsViewController.swift; sourceTree = "<group>"; };
 		5B3EFEA361A50BFDEC149AC9 /* Pods-TwitterClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterClient/Pods-TwitterClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				3ECE4F531FBAB5600031E5E9 /* FollowersListViewController.swift */,
 				3ECE4F6A1FBD5F310031E5E9 /* TwitterLoginWebViewController.swift */,
 				3ECE4F7E1FC104D00031E5E9 /* FollowerTableViewCell.swift */,
+				3ECE4F801FC116D20031E5E9 /* FollowerDetailsViewController.swift */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				3ECE4F541FBAB5600031E5E9 /* FollowersListViewController.swift in Sources */,
 				3ECE4F5A1FBD2E5B0031E5E9 /* String+HMAC.swift in Sources */,
 				3ECE4F791FC0E6110031E5E9 /* Error+Code.swift in Sources */,
+				3ECE4F811FC116D20031E5E9 /* FollowerDetailsViewController.swift in Sources */,
 				3ECE4F7B1FC0E7100031E5E9 /* TwitterClientPlaceHolders.swift in Sources */,
 				3ECE4F771FC0E4610031E5E9 /* ICSPullToRefresh.swift in Sources */,
 			);

@@ -183,7 +183,7 @@ extension TableView: PlaceholdersShowing {
     /// - Parameter dataSource: the selected placeholder
     func showPlaceholder(with dataSource: PlaceholderDataSourceDelegate) {
         separatorStyle = .none
-        alwaysBounceVertical = false
+        alwaysBounceVertical = true
         switchTo(dataSource: dataSource, delegate: dataSource)
     }
     

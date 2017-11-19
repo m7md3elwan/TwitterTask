@@ -17,12 +17,20 @@ class FollowersListViewController: UIViewController {
         didSet {
             if followers.count > 0 {
                 self.tableView.showDefault()
+                User.shared.cahcedFollowers = followers
             } else {
                 self.tableView.showNoResultsPlaceholder()
             }
             tableView.reloadData()
         }
     }
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(FollowersListViewController.refreshFollowers), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
     
     // MARK: Outlets
     @IBOutlet var tableView: TableView!
@@ -36,24 +44,30 @@ class FollowersListViewController: UIViewController {
     }
     
     // MARK:- Methods
-    // MARK: Actions
-    
-    // MARK: Public methods
-    
     // MARK: Private methods
     fileprivate func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         tableView.placeholdersProvider = PlaceholdersProvider.twitterPlaceHolders()
         tableView.tableFooterView = UIView()
         tableView.placeholderDelegate = self
+        
+        tableView.addSubview(self.refreshControl)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.tableView.addInfiniteScrollingWithHandler {
                 self.loadFollowers()
             }
         }
+    }
+    
+    func refreshFollowers() {
+        self.currentPage = -1
+        self.loadFollowers()
     }
     
     fileprivate func loadFollowers() {
@@ -63,15 +77,20 @@ class FollowersListViewController: UIViewController {
             self.tableView.showLoadingPlaceholder()
         }
         
+        refreshControl.endRefreshing()
+        
         TwitterHelper.getFollowers(user: User.shared.userInfo!, pageIndex: currentPage) { [capturedPageIndex = self.currentPage] (followers, pageIndex, error) in
-            
             
             self.tableView.infiniteScrollingView?.stopAnimating()
             
             guard error == nil else {
-                if capturedPageIndex == 0 {
+                if capturedPageIndex == -1 {
                     if error!.isNoInternet() {
-                        self.tableView.showNoConnectionPlaceholder()
+                        if User.shared.cahcedFollowers.count > 0{
+                            self.followers = User.shared.cahcedFollowers
+                        } else {
+                            self.tableView.showNoConnectionPlaceholder()
+                        }
                     } else {
                         self.tableView.showErrorPlaceholder()
                     }
@@ -83,6 +102,7 @@ class FollowersListViewController: UIViewController {
                 self.currentPage = pageIndex!
             }
             
+            // check that list won't contain duplicates
             var filteredRequests = [Follower]()
             for follower in followers!
             {
@@ -92,9 +112,7 @@ class FollowersListViewController: UIViewController {
                 }
             }
             self.followers.append(contentsOf: filteredRequests)
-            
         }
-
     }
     
     fileprivate func localizeView() {
@@ -118,7 +136,10 @@ extension FollowersListViewController:UITableViewDelegate,UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        
+        let followerDetailsViewController = FollowerDetailsViewController.instantiateFromStoryboard()
+        followerDetailsViewController.follower = followers[indexPath.row]
+        self.navigationController?.pushViewController(followerDetailsViewController, animated: true)
     }
 }
 

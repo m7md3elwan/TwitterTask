@@ -21,6 +21,7 @@ public class TwitterApiPortal {
         case getRequestToken = "oauth/request_token"
         case getAccessToken = "oauth/access_token"
         case getFollowers = "1.1/followers/list.json"
+        case getTweets = "1.1/statuses/user_timeline.json"
     }
     
     // MARK:- Methods
@@ -37,7 +38,7 @@ public class TwitterApiPortal {
         }
     }
     
-    static func getJson(endPoint:TwitterApiPortal.Endpoints, parameters:[String:Any] = [:], headers:[String:String] = [:], completionHandler: @escaping responseCallBack<[String:Any]> )
+    static func getDictionary(endPoint:TwitterApiPortal.Endpoints, parameters:[String:Any] = [:], headers:[String:String] = [:], completionHandler: @escaping responseCallBack<[String:Any]> )
     {
         TwitterApiPortal.requestJson(endPoint: endPoint, method: .get, parameters: parameters, headers: headers, returningClass: [String:Any].self) { (object, error) in
             
@@ -48,6 +49,19 @@ public class TwitterApiPortal {
             return
         }
     }
+    
+    static func getArray(endPoint:TwitterApiPortal.Endpoints, parameters:[String:Any] = [:], headers:[String:String] = [:], completionHandler: @escaping responseCallBack<[Any]> )
+    {
+        TwitterApiPortal.requestJson(endPoint: endPoint, method: .get, parameters: parameters, headers: headers, returningClass: [Any].self) { (object, error) in
+            
+            guard error == nil && object != nil else { completionHandler(object, error); return }
+            
+            completionHandler(object, nil)
+            
+            return
+        }
+    }
+    
     
     
     // MARK: Generic Methods

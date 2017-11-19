@@ -15,6 +15,7 @@ class User: NSObject, NSCoding {
         static let archivePath = "user"
         static let userInfo = "userInfo"
         static let userPreferedLanguage = "userPreferedLanguage"
+        static let cachedFollowers = "cachedFollowers"
     }
     
     // MARK:- Singleton
@@ -25,6 +26,7 @@ class User: NSObject, NSCoding {
     
     // MARK:- Variables
     var userInfo: UserInfo?
+    var cahcedFollowers = [Follower]()
     //    var userPreferedLanguage: ApplicationLanguage? {
     //        didSet {
     //            guard userPreferedLanguage != nil else {
@@ -37,6 +39,7 @@ class User: NSObject, NSCoding {
     // MARK:- Encoding & Decoding
     public func encode(with aCoder: NSCoder) {
         //aCoder.encode(self.userPreferedLanguage?.rawValue, forKey: User.constants.userPreferedLanguage)
+        aCoder.encode(self.cahcedFollowers, forKey: User.constants.cachedFollowers)
         aCoder.encode(self.userInfo, forKey: User.constants.userInfo)
     }
     
@@ -46,6 +49,7 @@ class User: NSObject, NSCoding {
             // self.userPreferedLanguage = ApplicationLanguage(rawValue: aDecoder.decodeObject(forKey: constants.userPreferedLanguage) as? String ?? "en")
         }
         self.userInfo = aDecoder.decodeObject(forKey: constants.userInfo) as? UserInfo
+        self.cahcedFollowers = aDecoder.decodeObject(forKey: constants.cachedFollowers) as? [Follower] ?? [Follower]()
     }
     
     
